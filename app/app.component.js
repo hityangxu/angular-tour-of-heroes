@@ -1,3 +1,6 @@
+/**
+ * Created by yangxu on 16-11-1.
+ */
 "use strict";
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -8,40 +11,17 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-/**
- * Created by yangxu on 16-10-30.
- */
-var core_1 = require('@angular/core');
-var Hero = (function () {
-    function Hero() {
-    }
-    return Hero;
-}());
-var HEROES = [
-    { id: 11, name: 'Mr. Nice' },
-    { id: 12, name: 'Narco' },
-    { id: 13, name: 'Bombasto' },
-    { id: 14, name: 'Celeritas' },
-    { id: 15, name: 'Magneta' },
-    { id: 16, name: 'RubberMan' },
-    { id: 17, name: 'Dynama' },
-    { id: 18, name: 'Dr IQ' },
-    { id: 19, name: 'Magma' },
-    { id: 20, name: 'Tornado' }
-];
+var core_1 = require("@angular/core");
 var AppComponent = (function () {
     function AppComponent() {
         this.title = 'Tour of Heroes';
-        this.heroes = HEROES;
     }
-    AppComponent.prototype.onSelect = function (hero) {
-        this.selectedHero = hero;
-    };
     AppComponent = __decorate([
         core_1.Component({
+            moduleId: module.id,
             selector: 'my-app',
-            template: "\n        <h1>{{title}}</h1>\n\n        <h2>My Heroes</h2>\n        <ul class=\"heroes\">\n            <li *ngFor=\"let hero of heroes\" [class.selected]=\"hero === selectedHero\" (click)=\"onSelect(hero)\">\n                <span class=\"badge\">{{hero.id}}</span> {{hero.name}}\n            </li>\n        </ul>\n        \n        <div *ngIf=\"selectedHero\">\n          <h2>{{selectedHero.name}} details!</h2>\n          <div><label>id: </label>{{selectedHero.id}}</div>\n          <div>\n            <label>name: </label>\n            <input [(ngModel)]=\"selectedHero.name\" placeholder=\"name\"/>\n          </div>\n        </div>\n\n    ",
-            styles: [" .selected { background-color: #CFD8DC !important; color: white; } .heroes { margin: 0 0 2em 0; list-style-type: none; padding: 0; width: 15em; } .heroes li { cursor: pointer; position: relative; left: 0; background-color: #EEE; margin: .5em; padding: .3em 0; height: 1.6em; border-radius: 4px; } .heroes li.selected:hover { background-color: #BBD8DC !important; color: white; } .heroes li:hover { color: #607D8B; background-color: #DDD; left: .1em; } .heroes .text { position: relative; top: -3px; } .heroes .badge { display: inline-block; font-size: small; color: white; padding: 0.8em 0.7em 0 0.7em; background-color: #607D8B; line-height: 1em; position: relative; left: -1px; top: -4px; height: 1.8em; margin-right: .8em; border-radius: 4px 0 0 4px; } "]
+            template: "\n        <h1>{{title}}</h1>\n        <nav>\n            <a routerLink=\"/dashboard\" routerLinkActive=\"active\">Dashboard</a>\n            <a routerLink=\"/heroes\" routerLinkActive=\"active\">Heroes</a>\n        </nav>\n        <router-outlet></router-outlet>\n    ",
+            styleUrls: ['app.component.css']
         }), 
         __metadata('design:paramtypes', [])
     ], AppComponent);

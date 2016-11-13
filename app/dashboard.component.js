@@ -34,10 +34,9 @@ var DashboardComponent = (function () {
             templateUrl: 'dashboard.component.html',
             styleUrls: ['dashboard.component.css']
         }), 
-        __metadata('design:paramtypes', [(typeof (_a = typeof hero_service_1.HeroService !== 'undefined' && hero_service_1.HeroService) === 'function' && _a) || Object, router_1.Router])
+        __metadata('design:paramtypes', [hero_service_1.HeroService, router_1.Router])
     ], DashboardComponent);
     return DashboardComponent;
-    var _a;
 }());
 exports.DashboardComponent = DashboardComponent;
 //# sourceMappingURL=dashboard.component.js.map
